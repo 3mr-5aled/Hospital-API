@@ -9,8 +9,6 @@
 
 A comprehensive RESTful API for hospital management built with Node.js, Express.js, and MongoDB. This system provides complete functionality for appointment booking, patient management, and administrative features.
 
-> 🎓 **Course Assignment Project**: Developed as part of backend development coursework demonstrating RESTful API design, authentication, authorization, and database management.
-
 ## 📑 Table of Contents
 
 - [Features](#-features)
@@ -184,6 +182,15 @@ For detailed database schema information, see [DATABASE_SCHEMA.md](DATABASE_SCHE
 
 ### Authentication
 
+| Method | Endpoint                            | Description            | Auth Required |
+| ------ | ----------------------------------- | ---------------------- | ------------- |
+| POST   | `/api/v1/auth/signup`               | Register new user      | No            |
+| POST   | `/api/v1/auth/login`                | Login user             | No            |
+| POST   | `/api/v1/auth/forgotPassword`       | Request password reset | No            |
+| PUT    | `/api/v1/auth/resetPassword/:token` | Reset password         | No            |
+
+### Patients
+
 | Method | Endpoint               | Description            | Auth Required |
 | ------ | ---------------------- | ---------------------- | ------------- |
 | GET    | `/api/v1/patients`     | Get all patients       | Admin/Doctor  |
@@ -224,40 +231,68 @@ For detailed database schema information, see [DATABASE_SCHEMA.md](DATABASE_SCHE
 
 > 📚 For detailed API documentation with request/response examples, see [API_REFERENCE.md](API_REFERENCE.md) or import the Postman collection from the `postman/` directory.
 
-## 🔒 Security Features
-
-- **Rate Limiting**: Prevents brute force attacks
-- **CORS**: Cross-Origin Resource Sharing protection
-- **Helmet**: Sets various HTTP headers for security
-- **HPP**: HTTP Parameter Pollution protection
-- **Input Validation**: Comprehensive request validation
-- **JWT Authentication**: Secure token-based authentication
-- **Password Hashing**: bcrypt for secure password storage
-
 ## 🧪 Testing
 
 ### Postman Collections
 
 Comprehensive Postman collections are available in the `postman/` directory:
 
-````📚 Documentation
+- **Hospital-Management-API.postman_collection.json** - Full API endpoints
+- **Hospital-API-TestSuite.postman_collection.json** - Automated test suite
+
+### Running Tests
+
+```bash
+cd postman
+npm install
+npm test
+```
+
+### Test Environments
+
+Three pre-configured environments are available:
+
+- Development
+- Staging
+- Production
+
+Import them into Postman from the `postman/` directory.
+
+## 📚 Documentation
+
+**Core Documentation:**
 
 - [API Reference](API_REFERENCE.md) - Complete endpoint documentation with examples
 - [Database Schema](DATABASE_SCHEMA.md) - Detailed database design and relationships
 - [Quick Start Guide](QUICKSTART.md) - Get started in 5 minutes
 - [Deployment Guide](DEPLOYMENT.md) - Deploy to Heroku, AWS, Vercel, DigitalOcean
+
+**Additional Resources:**
+
 - [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
 - [Security Policy](SECURITY.md) - Security guidelines and vulnerability reporting
-- [Code Quality Guidelines](CODE_QUALITY.md) - Coding standards and best practices
 - [Postman Documentation](postman/README.md) - API testing and automation
 - [Changelog](CHANGELOG.md) - Version history and release notes
 - [LinkedIn Showcase](LINKEDIN_SHOWCASE.md) - Tips for showcasing this project
+
+## 🚀 Deployment
+
+For detailed deployment instructions to various platforms (Heroku, AWS, Vercel, DigitalOcean, Railway), see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+**Quick Deploy:**
+
+- Ensure environment variables are properly configured
+- Set `NODE_ENV=production`
+- Use a production-grade database (MongoDB Atlas recommended)
+- Enable HTTPS/SSL
+- Configure CORS for your domain
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 **Quick steps:**
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'feat(scope): add amazing feature'`)
@@ -274,43 +309,25 @@ This project uses:
 - **Node.js** best practices
 
 Run quality checks before committing:
+
 ```bash
 npm run lint:fix    # Fix ESLint issues
 npm run format      # Format with Prettier
-````
+```
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+## 📄 License
 
-\*\*Qu� Documentation
+This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
 
-- [Database Schema](DATABASE_SCHEMA.md) - Detailed database design and relationships
-- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to this project
-- [Security Policy](SECURITY.md) - Security guidelines and vulnerability reporting
-- [Postman Documentation](postman/README.md) - API testing and automation
+## 👨‍💻 Author
 
-**Additional Resources:**
+**Amr Khaled Morcy**
 
-- [API Reference](API_REFERENCE.md) - Complete endpoint documentation with examples
-- [Quick Start Guide](QUICKSTART.md) - Get started in 5 minutes
-- [Deployment Guide](DEPLOYMENT.md) - Deploy to Heroku, AWS, Vercel, DigitalOcean
-- [Changelog](CHANGELOG.md) - Version history and release notes
+- GitHub: [@3mr-5aled](https://github.com/3mr-5aled)
+- Email: 3mr5aled.contact@gmail.com
 
-## 🚀 Deployment
+## 🙏 Acknowledgments
 
-For🎯 Project Status
-
-This project is **actively maintained** and developed as a course assignment.
-
-### Completed Features ✅
-
-- User authentication and authorization
-- Role-based access control (Admin, Doctor, Patient)
-- Patient management system
-- Doctor profiles and management
-- Clinic management
-- Appointment scheduling
-- Email notifications
-- Security features (Rate limiting, CORS, Helmet, HPP)
 - **Course Inspiration**: This project was developed as part of the [Node.js - Build a Full E-Commerce RESTful APIs](https://www.udemy.com/course/nodejs-build-a-full-e-commerce-restful-apis/) course by **Ahmed Boghdady**, **Mahmoud Bakr**, and **Index Academy** on Udemy. The course provided excellent guidance on building production-ready RESTful APIs with Node.js, Express, and MongoDB.
 - **Express.js team** for the excellent framework
 - **MongoDB team** for the robust database
@@ -321,7 +338,7 @@ This project is **actively maintained** and developed as a course assignment.
 
 For support and questions:
 
-- Open an issue on GitHub
+- Open an issue on [GitHub](https://github.com/3mr-5aled/Hospital-API/issues)
 - Email: 3mr5aled.contact@gmail.com
 - Check existing documentation and closed issues
 
@@ -330,58 +347,3 @@ For support and questions:
 ⭐ **If you found this project helpful, please give it a star!**
 
 💼 **Portfolio Project**: This API demonstrates full-stack backend development skills including RESTful API design, authentication, database management, and security best practices.
-
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-
-## 🔒 Security Features
-
-- **Rate Limiting**: Prevents brute force attacks
-- **CORS**: Cross-Origin Resource Sharing protection
-- **Helmet**: Sets various HTTP headers for security
-- **HPP**: HTTP Parameter Pollution protection
-- **Input Validation**: Comprehensive request validation
-- **JWT Authentication**: Secure token-based authentication
-- **Password Hashing**: bcrypt for secure password storage
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 Code Style
-
-This project uses:
-
-- **ESLint** with Airbnb configuration
-- **Prettier** for code formatting
-- **Node.js** best practices
-
-Run `npm run lint:fix` and `npm run format` before committing.
-
-## 📄 License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Amr Khaled Morcy**
-
-## 🙏 Acknowledgments
-
-- **Course Inspiration**: This project was developed as part of the [Node.js - Build a Full E-Commerce RESTful APIs](https://www.udemy.com/course/nodejs-build-a-full-e-commerce-restful-apis/) course by **Ahmed Boghdady**, **Mahmoud Bakr**, and **Index Academy** on Udemy. The course provided excellent guidance on building production-ready RESTful APIs with Node.js, Express, and MongoDB.
-- **Express.js team** for the excellent framework
-- **MongoDB team** for the robust database
-- **Open Source Community** for all the amazing packages and tools
-- All contributors and maintainers of the libraries used in this project
-
----
-
-⭐ **If you found this project helpful, please give it a star!**
-
-```
-
-```

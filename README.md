@@ -183,40 +183,44 @@ For detailed database schema information, see [DATABASE_SCHEMA.md](DATABASE_SCHE
 ## 🛣️ API Endpoints
 
 ### Authentication
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/v1/patients` | Get all patients | Admin/Doctor |
-| GET | `/api/v1/patients/:id` | Get patient by ID | Yes |
-| POST | `/api/v1/patients` | Create patient profile | Patient |
-| PUT | `/api/v1/patients/:id` | Update patient | Patient |
-| DELETE | `/api/v1/patients/:id` | Delete patient | Admin |
+
+| Method | Endpoint               | Description            | Auth Required |
+| ------ | ---------------------- | ---------------------- | ------------- |
+| GET    | `/api/v1/patients`     | Get all patients       | Admin/Doctor  |
+| GET    | `/api/v1/patients/:id` | Get patient by ID      | Yes           |
+| POST   | `/api/v1/patients`     | Create patient profile | Patient       |
+| PUT    | `/api/v1/patients/:id` | Update patient         | Patient       |
+| DELETE | `/api/v1/patients/:id` | Delete patient         | Admin         |
 
 ### Doctors
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/v1/doctors` | Get all doctors | No |
-| GET | `/api/v1/doctors/:id` | Get doctor by ID | No |
-| POST | `/api/v1/doctors` | Create doctor profile | Admin |
-| PUT | `/api/v1/doctors/:id` | Update doctor | Doctor/Admin |
-| DELETE | `/api/v1/doctors/:id` | Delete doctor | Admin |
+
+| Method | Endpoint              | Description           | Auth Required |
+| ------ | --------------------- | --------------------- | ------------- |
+| GET    | `/api/v1/doctors`     | Get all doctors       | No            |
+| GET    | `/api/v1/doctors/:id` | Get doctor by ID      | No            |
+| POST   | `/api/v1/doctors`     | Create doctor profile | Admin         |
+| PUT    | `/api/v1/doctors/:id` | Update doctor         | Doctor/Admin  |
+| DELETE | `/api/v1/doctors/:id` | Delete doctor         | Admin         |
 
 ### Clinics
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/v1/clinics` | Get all clinics | No |
-| GET | `/api/v1/clinics/:id` | Get clinic by ID | No |
-| POST | `/api/v1/clinics` | Create clinic | Admin |
-| PUT | `/api/v1/clinics/:id` | Update clinic | Admin |
-| DELETE | `/api/v1/clinics/:id` | Delete clinic | Admin |
+
+| Method | Endpoint              | Description      | Auth Required |
+| ------ | --------------------- | ---------------- | ------------- |
+| GET    | `/api/v1/clinics`     | Get all clinics  | No            |
+| GET    | `/api/v1/clinics/:id` | Get clinic by ID | No            |
+| POST   | `/api/v1/clinics`     | Create clinic    | Admin         |
+| PUT    | `/api/v1/clinics/:id` | Update clinic    | Admin         |
+| DELETE | `/api/v1/clinics/:id` | Delete clinic    | Admin         |
 
 ### Appointments
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/v1/appointments` | Get appointments | Yes |
-| GET | `/api/v1/appointments/:id` | Get appointment by ID | Yes |
-| POST | `/api/v1/appointments` | Create appointment | Patient |
-| PUT | `/api/v1/appointments/:id` | Update appointment | Doctor/Patient |
-| DELETE | `/api/v1/appointments/:id` | Cancel appointment | Doctor/Patient/Admin |
+
+| Method | Endpoint                   | Description           | Auth Required        |
+| ------ | -------------------------- | --------------------- | -------------------- |
+| GET    | `/api/v1/appointments`     | Get appointments      | Yes                  |
+| GET    | `/api/v1/appointments/:id` | Get appointment by ID | Yes                  |
+| POST   | `/api/v1/appointments`     | Create appointment    | Patient              |
+| PUT    | `/api/v1/appointments/:id` | Update appointment    | Doctor/Patient       |
+| DELETE | `/api/v1/appointments/:id` | Cancel appointment    | Doctor/Patient/Admin |
 
 > 📚 For detailed API documentation with request/response examples, see [API_REFERENCE.md](API_REFERENCE.md) or import the Postman collection from the `postman/` directory.
 
@@ -236,7 +240,7 @@ For detailed database schema information, see [DATABASE_SCHEMA.md](DATABASE_SCHE
 
 Comprehensive Postman collections are available in the `postman/` directory:
 
-```📚 Documentation
+````📚 Documentation
 
 - [API Reference](API_REFERENCE.md) - Complete endpoint documentation with examples
 - [Database Schema](DATABASE_SCHEMA.md) - Detailed database design and relationships
@@ -273,7 +277,8 @@ Run quality checks before committing:
 ```bash
 npm run lint:fix    # Fix ESLint issues
 npm run format      # Format with Prettier
-```
+````
+
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 \*\*Qu� Documentation
@@ -315,6 +320,7 @@ This project is **actively maintained** and developed as a course assignment.
 ## 📞 Support
 
 For support and questions:
+
 - Open an issue on GitHub
 - Email: 3mr5aled.contact@gmail.com
 - Check existing documentation and closed issues
@@ -324,6 +330,7 @@ For support and questions:
 ⭐ **If you found this project helpful, please give it a star!**
 
 💼 **Portfolio Project**: This API demonstrates full-stack backend development skills including RESTful API design, authentication, database management, and security best practices.
+
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check code formatting
 
@@ -374,4 +381,7 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 ---
 
 ⭐ **If you found this project helpful, please give it a star!**
-````
+
+```
+
+```

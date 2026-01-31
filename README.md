@@ -381,9 +381,11 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Express.js team for the excellent framework
-- MongoDB team for the robust database
-- All contributors and maintainers of the open-source packages used
+- **Course Inspiration**: This project was developed as part of the [Node.js - Build a Full E-Commerce RESTful APIs](https://www.udemy.com/course/nodejs-build-a-full-e-commerce-restful-apis/) course by **Ahmed Boghdady**, **Mahmoud Bakr**, and **Index Academy** on Udemy. The course provided excellent guidance on building production-ready RESTful APIs with Node.js, Express, and MongoDB.
+- **Express.js team** for the excellent framework
+- **MongoDB team** for the robust database
+- **Open Source Community** for all the amazing packages and tools
+- All contributors and maintainers of the libraries used in this project
 
 ---
 

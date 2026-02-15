@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./public/hospital-api-banner.png" alt="Hospital-API Backend Service" width="100%">
+</div>
+
 # Hospital Management System API
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
